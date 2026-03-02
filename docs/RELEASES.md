@@ -18,4 +18,4 @@ Highlights:
 
 Notes:
 
-- Provider-agnostic API surface; no Talos-specific types or defaults.
+- Generic API surface centered on VMware content library lifecycle operations.

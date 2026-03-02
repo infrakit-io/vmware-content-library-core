@@ -15,7 +15,7 @@ Reusable Go primitives for VMware vSphere Content Library workflows via `govc`.
 - OVF deployment wrapper (`DeployItem`)
 - Pluggable runner (`Runner`) for tests and custom execution environments
 
-No Talos-specific API. The package is generic and reusable for any OVA/OVF workflow.
+The package focuses on reusable VMware content library operations for OVA/OVF workflows.
 
 ## Install
 
