@@ -1,7 +1,7 @@
 # vmware-content-library-core
 
-[![CI](https://github.com/Bibi40k/vmware-content-library-core/actions/workflows/ci.yml/badge.svg)](https://github.com/Bibi40k/vmware-content-library-core/actions/workflows/ci.yml)
-[![Release](https://github.com/Bibi40k/vmware-content-library-core/actions/workflows/release.yml/badge.svg)](https://github.com/Bibi40k/vmware-content-library-core/actions/workflows/release.yml)
+[![CI](https://github.com/Bibi40k/vmware-content-library-core/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/Bibi40k/vmware-content-library-core/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/Bibi40k/vmware-content-library-core)](https://github.com/Bibi40k/vmware-content-library-core/releases)
 [![Go Version](https://img.shields.io/github/go-mod/go-version/Bibi40k/vmware-content-library-core)](https://github.com/Bibi40k/vmware-content-library-core/blob/master/go.mod)
 [![License](https://img.shields.io/github/license/Bibi40k/vmware-content-library-core)](https://github.com/Bibi40k/vmware-content-library-core/blob/master/LICENSE)
 
