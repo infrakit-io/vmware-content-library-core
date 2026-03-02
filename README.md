@@ -3,6 +3,7 @@
 [![CI](https://github.com/Bibi40k/vmware-content-library-core/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/Bibi40k/vmware-content-library-core/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/Bibi40k/vmware-content-library-core)](https://github.com/Bibi40k/vmware-content-library-core/releases)
 [![Coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Bibi40k/vmware-content-library-core/master/docs/coverage/coverage.json)](https://github.com/Bibi40k/vmware-content-library-core/blob/master/docs/coverage/coverage.json)
+[![Go Report Card](https://goreportcard.com/badge/github.com/Bibi40k/vmware-content-library-core)](https://goreportcard.com/report/github.com/Bibi40k/vmware-content-library-core)
 [![Go Version](https://img.shields.io/github/go-mod/go-version/Bibi40k/vmware-content-library-core)](https://github.com/Bibi40k/vmware-content-library-core/blob/master/go.mod)
 [![License](https://img.shields.io/github/license/Bibi40k/vmware-content-library-core)](https://github.com/Bibi40k/vmware-content-library-core/blob/master/LICENSE)
 
