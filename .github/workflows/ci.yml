@@ -11,3 +11,4 @@ jobs:
       contents: write
     with:
       coverage-badge: true
+      coverage-threshold: 90
