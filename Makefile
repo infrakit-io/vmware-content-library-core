@@ -1,4 +1,4 @@
-.PHONY: help build test test-v test-cover lint fmt vet vulncheck clean deps verify install-requirements check-go
+.PHONY: help build test test-v test-cover lint fmt vet vulncheck clean deps verify install-requirements setup check-go
 
 export GOTOOLCHAIN=auto
 SHELL := /bin/bash
@@ -29,6 +29,7 @@ help:
 	@printf "    $(GREEN)make vulncheck$(RESET)     		Run govulncheck (if installed)\n"
 	@printf "\n$(BOLD)  Setup$(RESET)\n"
 	@printf "    $(GREEN)make install-requirements$(RESET)  Install required tools\n"
+	@printf "    $(GREEN)make setup$(RESET)               Install pre-commit hook\n"
 	@printf "\n$(BOLD)  Maintenance$(RESET)\n"
 	@printf "    $(GREEN)make clean$(RESET)         		Remove build artifacts and test cache\n"
 	@printf "    $(GREEN)make deps$(RESET)          		Download + tidy dependencies\n"
@@ -146,3 +147,17 @@ verify: check-go
 
 install-requirements:
 	@bash scripts/install-requirements.sh
+
+REPO_STANDARDS_KIT ?= ../repo-standards-kit
+
+setup:
+	@mkdir -p .git/hooks
+	@if [ -f "$(REPO_STANDARDS_KIT)/templates/common/hooks/pre-commit" ]; then \
+		cp "$(REPO_STANDARDS_KIT)/templates/common/hooks/pre-commit" .git/hooks/pre-commit; \
+		chmod +x .git/hooks/pre-commit; \
+		printf "$(GREEN)✓ pre-commit hook installed$(RESET)\n"; \
+	else \
+		printf "$(YELLOW)Hook not found at $(REPO_STANDARDS_KIT)/templates/common/hooks/pre-commit$(RESET)\n"; \
+		printf "$(YELLOW)Set REPO_STANDARDS_KIT=<path> to override.$(RESET)\n"; \
+		exit 1; \
+	fi

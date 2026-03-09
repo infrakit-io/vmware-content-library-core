@@ -11,53 +11,10 @@ on:
         required: true
         default: "v0.1.0"
 
-permissions:
-  contents: write
-
 jobs:
   release:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Go
-        uses: actions/setup-go@v5
-        with:
-          go-version-file: go.mod
-
-      - name: Run tests
-        run: go test ./...
-
-      - name: Set release version
-        id: version
-        run: |
-          if [ "${{ github.event_name }}" = "push" ]; then
-            echo "value=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
-          else
-            echo "value=${{ inputs.version }}" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Generate release notes
-        run: |
-          mkdir -p dist
-          ./scripts/release-notes.sh "${{ steps.version.outputs.value }}" > dist/release-notes.md
-
-      - name: Ensure tag exists (manual releases)
-        if: ${{ github.event_name == 'workflow_dispatch' }}
-        run: |
-          if git rev-parse "${{ steps.version.outputs.value }}" >/dev/null 2>&1; then
-            echo "Tag ${{ steps.version.outputs.value }} already exists"
-          else
-            echo "Tag ${{ steps.version.outputs.value }} does not exist. Create and push it first."
-            exit 1
-          fi
-
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: ${{ steps.version.outputs.value }}
-          name: ${{ steps.version.outputs.value }}
-          body_path: dist/release-notes.md
-          draft: ${{ github.event_name == 'push' }}
+    uses: infrakit-io/repo-standards-kit/.github/workflows/go-release.yml@v1
+    permissions:
+      contents: write
+    with:
+      version: ${{ inputs.version || '' }}
