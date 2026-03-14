@@ -7,7 +7,7 @@ GREEN="\033[32m"
 YELLOW="\033[33m"
 RESET="\033[0m"
 
-GO_VERSION="1.26.0"
+GO_VERSION="1.26.1"
 
 info()    { printf "  ${CYAN}%s${RESET}\n" "$1"; }
 success() { printf "  ${GREEN}✓ %s${RESET}\n" "$1"; }
