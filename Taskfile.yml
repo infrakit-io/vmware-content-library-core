@@ -1,0 +1,10 @@
+version: '3'
+
+includes:
+  _common:
+    taskfile: ../Taskfile.common.yml
+    flatten: true
+    dir: '.'
+    vars:
+      REPO_NAME: vmware-content-library-core
+      REPO_STANDARDS_KIT: ../repo-standards-kit
